@@ -40,16 +40,26 @@ with :math:`j =1, \ldots, d` and `d` the distribution's dimension.
 The sampling is done using the *alias* method as described in [devroye1986]_, Chapter 3. It has an optimal space complexity of :math:`\cO(n)` and runtime CPU complexity of :math:`\cO(1)`, see :meth:`~openturns.DistFunc_rDiscrete`.
 
 Examples
+
 --------
-Create a distribution:
+Create a 1d-distribution:
 
 >>> import openturns as ot
+>>> points = ot.Sample([[1.0], [2.0], [3.0]])
+>>> weights = ot.Point([0.4, 0.5, 1.0])
+>>> my_distribution = ot.UserDefined(points, weights)
+>>> print(my_distribution)
+
+--------
+Create a 3d-distribution:
+
 >>> points = ot.Sample(4, 3)
 >>> for i in range(4):
 ...     for j in range(3):
 ...         points[i, j] = 10 * (i + 1) + 0.1 * (j + 1)
 
->>> distribution = ot.UserDefined(points, [0.3,0.2,0.25,0.25])"
+>>> distribution = ot.UserDefined(points, [0.3,0.2,0.25,0.25])
+>>> print(distribution)"
 
 // ---------------------------------------------------------------------
 
