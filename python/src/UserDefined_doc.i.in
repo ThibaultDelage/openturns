@@ -57,7 +57,6 @@ Create a 3d-distribution:
 >>> for i in range(4):
 ...     for j in range(3):
 ...         points[i, j] = 10 * (i + 1) + 0.1 * (j + 1)
-
 >>> distribution = ot.UserDefined(points, [0.3,0.2,0.25,0.25])
 >>> print(distribution)"
 
